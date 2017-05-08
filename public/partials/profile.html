@@ -13,7 +13,7 @@
                     <div class="profile-usertitle-name">
                         {{cook.username}}
                     </div>
-                    <div ng-repeat="food in user.foods track by $index"  class="profile-usertitle-job">
+                    <div ng-repeat="food in user.foods track by $index" class="profile-usertitle-job">
                         Type of Food: {{food.dish}}
                     </div>
                 </div>
@@ -33,14 +33,12 @@
                     <ul class="nav">
                         <li class="active">
                             <a href="#">
-                                <i class="fa fa-comments" aria-hidden="true"></i>
-                                Add a Review </a>
+                                <i class="fa fa-comments" aria-hidden="true"></i> Add a Review </a>
                         </li>
                     </ul>
                     <form ng-submit="addReview(review)">
                         <div class="form-group">
-                                    <textarea rows="7" cols="39" type="text" class="form-control"
-                                              placeholder="Add review..." ng-model="review.text"></textarea>
+                            <textarea rows="7" cols="39" type="text" class="form-control" placeholder="Add review..." ng-model="review.text"></textarea>
                             <button type="submit" class="btn btn-primary pull-right">Add the Review!</button>
                         </div>
 
@@ -56,6 +54,7 @@
             <!--<div class="col-sm-8">-->
             <div class="panel panel-default">
                 <div class="panel-heading">
+
                     <h3 class="panel-title">{{rev.author}}</h3>
 
                 </div>
@@ -68,12 +67,12 @@
                     <!--<div class="panel-footer clearfix">-->
 
                     <span ng-click="downvote(review._id)"> </span>
-                    <i ng-click="deleteReview(review)"
-                       class="fa fa-trash pull-right"
-                       aria-hidden="true" role="button"></i>
+                    <i ng-click="deleteReview(review)" class="fa fa-trash pull-right" aria-hidden="true" role="button"></i>
 
-                </div><!--/panel-footer-->
-            </div><!--/panel-->
+                </div>
+                <!--/panel-footer-->
+            </div>
+            <!--/panel-->
             <!--</div>&lt;!&ndash;/col-sm-6&ndash;&gt;-->
             <!--</div>-->
             <!--</div>-->

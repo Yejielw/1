@@ -11,14 +11,12 @@
     <!-- CSS -->
 
     <script src="https://code.jquery.com/jquery-2.1.4.js" data-require="jquery@*" data-semver="2.1.4"></script>
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
-    <link rel="stylesheet" href="../bower_components/angular-bootstrap/ui-bootstrap-csp.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"
-          type="text/css"/>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="navbarStyle.css"/>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../bower_components/angular-bootstrap/ui-bootstrap-csp.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="navbarStyle.css" />
 
     <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" />-->
     <!--&lt;!&ndash; Optional theme &ndash;&gt;-->
@@ -52,11 +50,6 @@
 
             </ul>
         </div>
-
-        <ul class="nav navbar-nav navbar-right" ng-show='currentUser'>
-            <li class="navbar-text"><a ui-sref="account">{{currentUser}} </a></li>
-            <li class="navbar-text"><a target="_self" href="/users/logout">Logout</a></li>
-        </ul>
         <ul class="nav navbar-nav navbar-right" ng-hide='currentUser'>
             <li><a ui-sref="login">Login</a></li>
             <li><a ui-sref="map.join">Join the Cooking Team</a></li>
@@ -64,21 +57,21 @@
 
         </ul>
 
-    </div>
+        </div>
 
-</nav>
+    </nav>
 
 
     <ui-view></ui-view>
 
 
-<!-- JS Source -->
-<script src="../bower_components/angular/angular.js"></script>
-<script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
-<script src="../bower_components/angular-route/angular-route.js"></script>
-<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- JS Source -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Angular Scripts -->
     <!-- JS Source -->
@@ -89,18 +82,18 @@
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
 
-<script src="js/app.js"></script>
-<script src="js/addCtrl.js"></script>
-<script src="js/gservice.js"></script>
-<script src="js/queryCtrl.js"></script>
-<script src="js/authCtrl.js"></script>
-<script src="js/accountCtrl.js"></script>
-<script src="js/authFactory.js"></script>
-<script src="js/masterController.js"></script>
-<script src="js/foodController.js"></script>
-<script src="js/reviewController.js"></script>
-<script src="js/reviewFactory.js"></script>
-<script src="js/navbarFunc.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/addCtrl.js"></script>
+    <script src="js/gservice.js"></script>
+    <script src="js/queryCtrl.js"></script>
+    <script src="js/authCtrl.js"></script>
+    <script src="js/accountCtrl.js"></script>
+    <script src="js/authFactory.js"></script>
+    <script src="js/masterController.js"></script>
+    <script src="js/foodController.js"></script>
+    <script src="js/reviewController.js"></script>
+    <script src="js/reviewFactory.js"></script>
+    <script src="js/navbarFunc.js"></script>
 
 
 </body>

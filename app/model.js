@@ -1,10 +1,11 @@
 // Pulls Mongoose dependency for creating schemas
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var plm = require('passport-local-mongoose')
+var plm = require('passport-local-mongoose');
 
 var availabilitySchema = new Schema({
     text: String
+
 });
 
 var FoodSchema = new Schema({
@@ -40,7 +41,11 @@ var UserSchema = new Schema({
     cookPic: { type: String },
     descrip: { type: String },
     phoneNumber: { type: Number },
-    reviews: [{ type: Schema.Types.ObjectId, ref: 'review' }] //population from the reviews schema
+
+    reviews: [{ type: Schema.Types.ObjectId, ref: 'review' }], //population from the reviews schema
+    upvotes: {type: Number, default:0 },
+    downvotes: {type: Number, default:0 },
+
 });
 
 // Sets the created_at parameter equal to the current time

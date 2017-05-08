@@ -1,5 +1,6 @@
 // Declares the initial angular module "meanMapApp". Module grabs other controllers and services.
 var app = angular.module('meanMapApp', [
+    'ui.bootstrap',
     'ui.router',
     'addCtrl',
     'queryCtrl',
@@ -51,10 +52,10 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
                         let userId = $stateParams.id;
                         console.log("getting review from: ", "/review/" + userId);
                         return $http.get("/review/" + userId).then(function (theWholeUserObj) {
-                            console.log("the next obj comes from app.js - Profile State");
-                            console.log(theWholeUserObj.data);
-                            console.log("this is the users reviews");
-                            console.log(theWholeUserObj.data.reviews);
+                            // console.log("the next obj comes from app.js - Profile State");
+                            // console.log(theWholeUserObj.data);
+                            // console.log("this is the users reviews");
+                            // console.log(theWholeUserObj.data.reviews);
                             return theWholeUserObj.data;
                         })
                     }]
@@ -74,6 +75,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
                 url: '/home',
                 templateUrl: 'js/components/home/home.tpl.html',
             })
+
+            .state('aboutUs', {
+                url: '/aboutUs',
+                templateUrl: 'partials/aboutUs.html',
+            })
+
             .state('account.addFood', {
                 url: '/addFood',
                 templateUrl: 'partials/addFood.html',

@@ -1,7 +1,18 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+.main-container {
+    margin-top: 60px;
+}
+
 .cover {
     background: url('/images/cover.jpg') no-repeat center fixed;
     background-size: cover;
-    height: 700px;
+    height: 100%;
     width: 100%;
 }
 
@@ -128,7 +139,8 @@
     border-radius: 10px;
     display: block;
     margin: auto;
-   padding-bottom: 10px;
+    padding-bottom: 10px;
+    box-shadow: 10px 10px 5px #888888;
 }
 
 .modal-open {
@@ -189,6 +201,12 @@ section {
 }
 
 
+body {
+    background: #d3d6db;
+
+}
+
+
 /* Profile container */
 
 .profile {
@@ -220,11 +238,16 @@ section {
 
 .profile-usertitle-name {
     color: #5a7391;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 7px;
 }
-
+.reevieews{
+    color: #5a7391;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
 .profile-usertitle-job {
     text-transform: uppercase;
     color: #5b9bd1;
@@ -236,6 +259,7 @@ section {
 .profile-userbuttons {
     text-align: center;
     margin-top: 10px;
+    padding: 10px;
 }
 
 .profile-userbuttons .btn {
@@ -296,5 +320,96 @@ section {
     padding: 20px;
     background: #fff;
     min-height: 460px;
+}
+
+.home-btn{
+    border-radius: 0;
+    border: 0!important;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    height: 80px;
+    width: 250px;
+    font-size: 22px;
+}
+
+.home-btn:hover{
+    background-color: #097B96;
+    color: white;
+
+}
+
+.content{
+    padding-top: 28px;
+}
+
+.rightCol1 {
+
+    float: right;
+    margin-top: 10px;
+}
+
+.theBox2 {
+    border-radius: 5px;
+    width: 483px;
+    height: 244px;
+    overflow: hidden;
+    position: relative;
+    margin: 10px 0px 40px 15px;
+    padding-left: 200px;
+    box-sizing: border-box;
+}
+
+.txtBox2 {
+    position: absolute;
+    height: 244px;
+    width: 190px;
+    bottom: 0;
+    left: 0;
+
+}
+
+h4 {
+    padding: 0;
+    margin: 10px 0 10px 15px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #e6540c;
+    text-transform: capitalize;
+}
+
+h5 {
+    padding: 0;
+    margin: 0px 0 5px 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+}
+
+#slides_control > div{
+    height: 200px;
+}
+img{
+    margin:auto;
+    width: 400px;
+}
+#slides_control {
+    position:absolute;
+    width: 400px;
+    left:50%;
+    top:20px;
+    margin-left:-200px;
+}
+
+
+
+#aboutus {
+    font-weight: 700;
+    font-size: 5em;
+}
+
+.about{
+    max-width: 282px;
+    margin: 0 5px 20px 5px;
+    padding-top: 19px;
 }
 

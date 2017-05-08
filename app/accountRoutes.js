@@ -13,7 +13,6 @@ router.post('/updateProfile', (req, res, next) => {
 
     User.findById(req.user._id, (err, user) => {
         // http://localhost:3000/users/currentUser
-        console.log(req.user.id);
         if (err) {
             return next(err);
         }
@@ -25,6 +24,7 @@ router.post('/updateProfile', (req, res, next) => {
         user.descrip = req.body.descrip || '';
         user.phoneNumber = req.body.phoneNumber || '';
         user.place = req.body.place || '';
+
 
         user.save((err) => {
             if (err) {
@@ -101,7 +101,7 @@ router.post('/addfood', (req, res, next) => {
     //const errors = req.validationErrors();
 
     User.findById(req.user._id, (err, user) => {
-        console.log(req.user.id)
+        // console.log(req.user.id)
         if (err) {
             return next(err);
         }
@@ -119,11 +119,14 @@ router.post('/addfood', (req, res, next) => {
                 //req.flash('success', { msg: 'Profile information has been updated.' });
                 res.redirect('/home');
             });
-        } else {
-            console.log("not a cook");
+        }
+        else {
+            // console.log("not a cook");
         }
     });
 });
+
+
 router.post('/addReview', (req, res, next) => {
 
     let newReview = new Review(req.body);
@@ -172,5 +175,6 @@ router.delete('/:userid/reviews/:deleteReviewId', function(req, res, next) {
         }
     })
 });
+
 
 module.exports = router;

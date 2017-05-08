@@ -1,42 +1,50 @@
-/*
-* Style tweaks
-* --------------------------------------------------
-*/
-
 html,
 body {
     overflow-x: hidden;
     /* Prevent scroll on narrow devices */
 }
 
+
+.navbar-brand {
+    font-size: 24px;
+
 body {
     padding-top: 70px;
 }
 
-footer {
-    padding: 30px 0;
+.navbar-reg {
+    background-color:#097B96;
 }
 
 
-/*
-* Custom styles
-*/
+.navbar-container {
+    padding: 5px 0 5px 0;
 
-.navbar-brand {
-    font-size: 24px;
 }
+
+
+.navbar.navbar-fixed-top {
+    background-color: #08B2C9;
+    border-color: #080808;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .4);
 
 .navbar-container {
     padding: 10px 0 10px 0;
+
 }
 
+
 .navbar.navbar-fixed-top a {
+    color: white;
+
+}
+
+.navbar.navbar-fixed-top a:hover {
     color: black;
 }
 
-.navbar.navbar-fixed-top {
-    background-color: turquoise;
-}
+.nav > li {
+    margin: 0;
 
 .navbar.navbar-fixed-top.fixed-theme {
     background-color: #CD0000;
@@ -45,7 +53,7 @@ footer {
 }
 
 .navbar.navbar-fixed-top.fixed-theme a {
-    color: white;
+    color: black;
 }
 
 .navbar.navbar-fixed-top.fixed-theme a:hover {
@@ -54,10 +62,11 @@ footer {
 
 .navbar-brand.fixed-theme {
     font-size: 18px;
-}
 
+}
 .navbar-container.fixed-theme {
     padding: 0;
+
 }
 
 .navbar-brand.fixed-theme,

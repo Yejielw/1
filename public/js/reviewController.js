@@ -4,27 +4,38 @@
 "use strict";
 app.controller('reviewController', ["$scope", "reviewFactory", "relevantCook", "$http", 'authFactory', function ($scope, reviewFactory, relevantCook, $http, authFactory) {
 
-    // $scope.reviews = [];
-    // $scope.reviews.push(reviews.data);
+
     $scope.cook = relevantCook;
+    console.log(relevantCook);
 
     $scope.addReview = function (review) {
         let newReview = {
             text: review.text,
-            //author: $scope.author,
+            author: $scope.currentUser,
             cooksid: $scope.cook._id,
         };
 
         reviewFactory.addReview(newReview)
             .then(function (review) {
                 $scope.cook.reviews.push(review);
-        }, function (err) {
-            console.error(err);
-        });
+            }, function (err) {
+                console.error(err);
+            });
 
     };
 
+    $scope.deleteReview = function (review) {
+        console.log("soy el review to Remove" + " "+  review);
+        return $http.delete('/deleteReview/' + review._id + '/deleteReviewId', review)
+            .then(function (response) {
+                console.log("from the controller delete");
+                console.log(response);
+                $http.get('/account/deleteReview').then(function (reviews) {
+                    $scope.cook.reviews = reviews.data;///now we are reshowing the data after the db removed it
+                });
+            })
 
+    };
     // $scope.upvote = function (review) {
     //     reviewFactory.upvote(review).then(function () {
     //         reviewFactory.getReview().then(function (reviews) {
@@ -43,13 +54,6 @@ app.controller('reviewController', ["$scope", "reviewFactory", "relevantCook", "
     //     });
     // };
 
-    $scope.deleteReview = function (reviewToRemove) {
-        return $http.delete('/review/' + reviewToRemove._id)
-            .then(function (response) {
-                $http.get('/review').then(function (reviews) {
-                    $scope.reviews = reviews.data;///now we are reshowing the data after the db removed it
-                });
-            })
 
-    }
+
 }]);

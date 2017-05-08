@@ -40,6 +40,7 @@ angular.module('queryCtrl', ['geolocation', 'gservice'])
                 distance: parseFloat($scope.formData.distance),
                 favlang: $scope.formData.favlang,
                 reqVerified: $scope.formData.verified,
+                cook: true
 
             };
 

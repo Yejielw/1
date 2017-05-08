@@ -126,11 +126,16 @@
 .fotos {
     border: 1px;
     border-radius: 10px;
+    display: block;
+    margin: auto;
+   padding-bottom: 10px;
 }
 
 .modal-open {
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x:scroll;
     max-height: 550px;
+    max-width: 550px;
 }
 
 .glyphicon-thumbs-down,
@@ -292,3 +297,4 @@ section {
     background: #fff;
     min-height: 460px;
 }
+

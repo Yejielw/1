@@ -24,10 +24,6 @@ module.exports = function(app) {
         });
     });
 
-
-
-
-
     // Retrieves JSON records for all users who meet a certain set of query conditions
     app.post('/query/', function(req, res) {
 

@@ -7,13 +7,13 @@ app.factory('authFactory', function($http) {
         return $http.post('/users/register', user)
             .then(function(response) {
                 return response.data
-            });;
+            });
     };
     auth.registerCook = function(user) {
         return $http.post('/users/registerCook', user)
             .then(function(response) {
                 return response.data
-            });;
+            });
     };
 
     auth.login = function(user) {

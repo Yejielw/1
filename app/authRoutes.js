@@ -52,8 +52,6 @@ router.post('/registerCook', function(req, res, next) {
     });
 });
 
-// ******** UNTIL HERE WORK IN PROGRESS **********//
-
 router.post('/login', passport.authenticate('local'), function(req, res) {
     // If this function gets called, authentication was successful.
     // `req.user` contains the authenticated user.

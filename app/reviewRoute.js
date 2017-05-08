@@ -7,42 +7,37 @@ const router = express.Router();
 const Review = require('../app/reviewModel'); // Esto es para acceder al schema que estamos exportando como un objeto
 const User = require('../app/model');
 
-const ensureAuthenticated = function (req, res, next) {
+const ensureAuthenticated = function(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
-    } else {
-    }
+    } else {}
 };
 
 
-router.get('/:userid', function (req, res, next) {
+router.get('/:userid', function(req, res, next) {
     console.log("********************* userId*********************");
 
     const userId = req.params.userid;
 
     console.log("Looking for user with id ", userId);
-    User.findOne ({_id: userId}).populate("reviews")
-        .exec(function (error, user) {
+    User.findOne({ _id: userId }).populate("reviews")
+        .exec(function(error, user) {
             console.log(user);
-        if (error) {
-            console.error("Error finding user with id ", userId, ":", error);
-            return next(error);
-        }
-        else if (!user) {
-            console.log("No  exists user with id ", userId);
-            res.send({});
-        } else {
-            console.log("********************* review*********************");
-            console.log("Found user with id ", userId, ":", user);
-            res.send(user);
-        }
+            if (error) {
+                console.error("Error finding user with id ", userId, ":", error);
+                return next(error);
+            } else if (!user) {
+                console.log("No  exists user with id ", userId);
+                res.send({});
+            } else {
+                console.log("********************* review*********************");
+                console.log("Found user with id ", userId, ":", user);
+                res.send(user);
+            }
 
-    });
+        });
 
 });
-
-
-
 
 // router.put('/:revieswid/upvote', function (req, res) {
 //     req.review.upvote();
@@ -57,8 +52,5 @@ router.get('/:userid', function (req, res, next) {
 //         res.send(review);
 //     });
 // });
-
-
-
 
 module.exports = router;

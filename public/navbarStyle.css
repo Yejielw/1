@@ -10,7 +10,9 @@ body {
 }
 
 body {
-    padding-top: 120px;
+
+    padding-top: 60px;
+
 }
 
 footer {
@@ -27,11 +29,15 @@ footer {
 }
 
 .navbar-container {
-    padding: 20px 0 20px 0;
+    padding: 10px 0 10px 0;
 }
 
 .navbar.navbar-fixed-top a {
     color: black;
+}
+
+.navbar.navbar-fixed-top {
+    background-color: turquoise;
 }
 
 .navbar.navbar-fixed-top.fixed-theme {
@@ -42,6 +48,10 @@ footer {
 
 .navbar.navbar-fixed-top.fixed-theme a {
     color: white;
+}
+
+.navbar.navbar-fixed-top.fixed-theme a:hover {
+    color: red;
 }
 
 .navbar-brand.fixed-theme {

@@ -55,7 +55,7 @@ router.post('/registerCook', function(req, res, next) {
 router.post('/login', passport.authenticate('local'), function(req, res) {
     // If this function gets called, authentication was successful.
     // `req.user` contains the authenticated user.
-    res.send(req.user.username)
+    res.send(req.user)
 });
 
 router.get('/logout', function(req, res) {
@@ -65,7 +65,7 @@ router.get('/logout', function(req, res) {
 
 router.get('/currentuser', function(req, res) {
     if (req.user) {
-        return res.send(req.user.username)
+        return res.send(req.user)
     } else {
         return res.status(401).send('Doh');
     }

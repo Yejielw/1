@@ -4,23 +4,33 @@ body {
     /* Prevent scroll on narrow devices */
 }
 
+
 .navbar-brand {
     font-size: 24px;
+
+body {
+    padding-top: 70px;
 }
 
 .navbar-reg {
     background-color:#097B96;
 }
 
+
 .navbar-container {
     padding: 5px 0 5px 0;
 
 }
 
+
 .navbar.navbar-fixed-top {
     background-color: #08B2C9;
     border-color: #080808;
     box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+
+.navbar-container {
+    padding: 10px 0 10px 0;
+
 }
 
 
@@ -35,7 +45,6 @@ body {
 
 .nav > li {
     margin: 0;
-}
 
 .navbar.navbar-fixed-top.fixed-theme {
     background-color: #CD0000;
@@ -45,6 +54,10 @@ body {
 
 .navbar.navbar-fixed-top.fixed-theme a {
     color: black;
+}
+
+.navbar.navbar-fixed-top.fixed-theme a:hover {
+    color: red;
 }
 
 .navbar-brand.fixed-theme {

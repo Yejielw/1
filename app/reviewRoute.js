@@ -7,12 +7,12 @@ const router = express.Router();
 const User = require('../app/model');
 const Review = require('../app/reviewModel'); // Esto es para acceder al schema que estamos exportando como un objeto
 
-const ensureAuthenticated = function (req, res, next) {
+const ensureAuthenticated = function(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
-    } else {
-    }
+    } else {}
 };
+
 
 
 router.get('/:userid', function (req, res, next) {
@@ -34,10 +34,12 @@ router.get('/:userid', function (req, res, next) {
             } else {
                 // console.log("********************* review*********************");
                 // console.log("Found user with id ", userId, ":", user);
+
                 res.send(user);
             }
 
         });
+
 
 });
 
@@ -183,3 +185,23 @@ router.delete('/:deleteReviewId/:cookId', function (req, res, next) {
 
 
     module.exports = router;
+=======
+
+});
+
+// router.put('/:revieswid/upvote', function (req, res) {
+//     req.review.upvote();
+//     req.review.save(function (err, review) {
+//         res.send(review);
+//     });
+// });
+//
+// router.put('/:reviewsid/downvote',  function (req, res) {
+//     req.review.downvote();
+//     req.review.save(function (err, review) {
+//         res.send(review);
+//     });
+// });
+
+module.exports = router;
+

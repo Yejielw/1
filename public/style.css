@@ -155,7 +155,6 @@ body {
     cursor: pointer;
 }
 
-
 #hometext {
     text-align: center;
     padding-top: 15%;
@@ -200,6 +199,7 @@ section {
     height: 150px;
     width: 150px;
 }
+
 
 body {
     background: #d3d6db;

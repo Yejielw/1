@@ -7,17 +7,16 @@
     <meta charset="utf-8">
     <title>Home Cooks</title>
     <meta name="description" content="Home Cooked Meals">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!-- CSS -->
+
     <script src="https://code.jquery.com/jquery-2.1.4.js" data-require="jquery@*" data-semver="2.1.4"></script>
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
-    <link rel="stylesheet" href="../bower_components/angular-bootstrap/ui-bootstrap-csp.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"
-          type="text/css"/>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="navbarStyle.css"/>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../bower_components/angular-bootstrap/ui-bootstrap-csp.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="navbarStyle.css" />
 
     <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" />-->
     <!--&lt;!&ndash; Optional theme &ndash;&gt;-->
@@ -25,6 +24,7 @@
     <!--&lt;!&ndash; Latest compiled and minified JavaScript &ndash;&gt;-->
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"></script>-->
     <!---->
+
 
     <!-- Holder JS -->
     <script src="../bower_components/holderjs/holder.js"></script>
@@ -35,76 +35,66 @@
 </head>
 
 <body ng-controller="masterController">
-<nav id="header" class="navbar navbar-fixed-top">
-    <div id="header-container" class="container navbar-container">
-        <div class="navbar-header">
-            <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                    aria-controls="navbar" class="navbar-toggle collapsed"><span
-                    class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
-                    class="icon-bar"></span><span
-                    class="icon-bar"></span></button>
 
 
-            <a id="brand" href="/" class="navbar-brand">The Home Cook</a>
-
-            <ul class="nav navbar-nav navbar-left" ng-hide='currentUser'>
-                <li class="navbar-text"><a ui-sref="map.find" ng-show='currentUser'>Whats Cooking</a></li>
+    <nav id="header" class="navbar navbar-fixed-top">
+        <div id="header-container" class="container navbar-container">
+            <div class="navbar-header">
+                <a id="brand" href="/" class="navbar-brand">The Home Cook</a>
+            </div>
+            <ul class="nav navbar-nav navbar-left" ng-show='currentUser'>
+                <li><a ui-sref="map.find">Whats Cooking</a></li>
 
             </ul>
-        </div>
+            <ul class="nav navbar-nav navbar-right" ng-show='currentUser'>
+                <li><a ui-sref="account">{{currentUser.username}} </a></li>
+                <li><a target="_self" href="/users/logout">Logout</a></li>
 
-        <ul class="nav navbar-nav navbar-right" ng-show='currentUser'>
-            <li class="navbar-text"><a ui-sref="account">{{currentUser}} </a></li>
-            <li class="navbar-text"><a target="_self" href="/users/logout">Logout</a></li>
-        </ul>
+
         <ul class="nav navbar-nav navbar-left" ng-show='currentUser'>
             <li><a ui-sref="map.list">What's on the menu?</a></li>
             <li><a ui-sref="aboutUs">About</a></li>
         </ul>
 
-
-        <ul class="nav navbar-nav navbar-right" ng-hide='currentUser'>
-            <!--<li><a href='https://www.facebook.com/The-Home-Cook-1876953649184054/'>About</a></li>-->
-            <li><a ui-sref="aboutUs">About</a></li>
-            <li><a ui-sref="map.list">What's on the menu?</a></li>
-            <li><a ui-sref="map.join">Join the Cooking Team</a></li>
-            <li><a ui-sref="login">Login</a></li>
-            <li><a ui-sref="register" class="navbar-reg"> Register </a></li>
-
-
-
         </ul>
 
-    </div>
+        </div>
 
-</nav>
-
-
-<ui-view></ui-view>
+    </nav>
 
 
-<!-- Angular Scripts -->
-<!-- JS Source -->
-<script src="../bower_components/angular/angular.js"></script>
-<script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
-<script src="../bower_components/angular-route/angular-route.js"></script>
-<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <ui-view></ui-view>
 
 
-<script src="js/app.js"></script>
-<script src="js/addCtrl.js"></script>
-<script src="js/gservice.js"></script>
-<script src="js/queryCtrl.js"></script>
-<script src="js/authCtrl.js"></script>
-<script src="js/accountCtrl.js"></script>
-<script src="js/authFactory.js"></script>
-<script src="js/masterController.js"></script>
-<script src="js/foodController.js"></script>
-<script src="js/reviewController.js"></script>
-<script src="js/reviewFactory.js"></script>
-<script src="js/navbarFunc.js"></script>
+    <!-- JS Source -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Angular Scripts -->
+    <!-- JS Source -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+
+    <script src="js/app.js"></script>
+    <script src="js/addCtrl.js"></script>
+    <script src="js/gservice.js"></script>
+    <script src="js/queryCtrl.js"></script>
+    <script src="js/authCtrl.js"></script>
+    <script src="js/accountCtrl.js"></script>
+    <script src="js/authFactory.js"></script>
+    <script src="js/masterController.js"></script>
+    <script src="js/foodController.js"></script>
+    <script src="js/reviewController.js"></script>
+    <script src="js/reviewFactory.js"></script>
+    <script src="js/navbarFunc.js"></script>
 
 
 </body>

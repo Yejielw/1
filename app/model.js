@@ -18,12 +18,8 @@ var FoodSchema = new Schema({
     availability: { type: String }
 });
 
-
-
-
 // Creates a User Schema. This will be the basis of how user data is stored in the db
 var UserSchema = new Schema({
-
     email: { type: String },
     fullname: { type: String },
     username: { type: String },
@@ -45,6 +41,7 @@ var UserSchema = new Schema({
     cookPic: { type: String },
     descrip: { type: String },
     phoneNumber: { type: Number },
+
     reviews: [{ type: Schema.Types.ObjectId, ref: 'review' }], //population from the reviews schema
     upvotes: {type: Number, default:0 },
     downvotes: {type: Number, default:0 },

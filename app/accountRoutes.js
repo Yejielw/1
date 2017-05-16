@@ -4,19 +4,16 @@ var User = require("../app/model");
 var Review = require("../app/reviewModel");
 var passport = require('passport');
 
-// ******** WORK IN PROGRESS **********
 
 router.get('/updateProfile', (req, res, next) => {
     return res.send(req.user);
 });
 
 router.post('/updateProfile', (req, res, next) => {
-
     //const errors = req.validationErrors();
 
     User.findById(req.user._id, (err, user) => {
         // http://localhost:3000/users/currentUser
-        // console.log(req.user.id);
         if (err) {
             return next(err);
         }
@@ -28,7 +25,7 @@ router.post('/updateProfile', (req, res, next) => {
         user.descrip = req.body.descrip || '';
         user.phoneNumber = req.body.phoneNumber || '';
         user.place = req.body.place || '';
-        // user.cook = x || '';
+
 
         user.save((err) => {
             if (err) {
@@ -57,9 +54,7 @@ router.post('/addfood', (req, res, next) => {
         options: req.body.options,
         availability: req.body.availability
     };
-
     //const errors = req.validationErrors();
-
 
     User.findById(req.user._id, (err, user) => {
         // console.log(req.user.id)
@@ -86,6 +81,5 @@ router.post('/addfood', (req, res, next) => {
         }
     });
 });
-
 
 module.exports = router;

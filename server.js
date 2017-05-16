@@ -12,18 +12,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
-
-
-
-
-
 // Connect to database
 mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/trial5");
-
-
-
-
-
 
 // Main app
 
@@ -34,16 +24,6 @@ app.use(bodyParser.urlencoded({ extended: true })); // parse application/x-www-f
 app.use(bodyParser.text()); // allows bodyParser to look at raw text
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 app.use(morgan('dev')); // log with Morgan
-
-
-
-
-
-
-
-
-
-
 
 // Auth + sessions
 
@@ -64,14 +44,11 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
 // Backend / API
 
 var userRoutesRouter = require('./app/authRoutes');
 var accountRoutesRouter = require('./app/accountRoutes');
-
 var reviewRouteRouter = require('./app/reviewRoute');
-
 
 var ensureAuthenticated = function(req, res, next) {
     if (req.isAuthenticated()) {
@@ -85,21 +62,11 @@ app.use('/users', userRoutesRouter);
 app.use('/account', ensureAuthenticated, accountRoutesRouter);
 app.use('/review', reviewRouteRouter);
 
-
-
-
-
-
-// Logging and Parsing
-
 // Routes
 // ------------------------------------------------------
 const registerRoutes = require('./app/routes.js');
 
 registerRoutes(app);
-
-
-
 
 // Front end server
 
@@ -111,15 +78,6 @@ app.all('[^.]+', function(req, res) {
     res.sendFile(__dirname + "/public/index.html")
 });
 
-
-
-
-
-
-
-
-
-
 // main error handler
 // warning - not for use in production code!
 app.use(function(err, req, res, next) {
@@ -129,15 +87,6 @@ app.use(function(err, req, res, next) {
         error: err
     });
 });
-
-
-
-
-
-
-
-
-
 
 // Listen
 // -------------------------------------------------------

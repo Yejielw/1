@@ -51,42 +51,20 @@ angular.module('queryCtrl', ['geolocation', 'gservice'])
                 .success(function(queryResults) {
 
                     // Query Body and Result Logging
-                    console.log("QueryBody:");
-                    console.log(queryBody);
-                    console.log("QueryResults:");
-                    console.log(queryResults);
+                    // console.log("QueryBody:");
+                    // console.log(queryBody);
+                    // console.log("QueryResults:");
+                    // console.log(queryResults);
                     // Pass the filtered results to the Google Map Service and refresh the map
                     gservice.refresh(queryBody.latitude, queryBody.longitude, queryResults);
 
                     // Count the number of records retrieved for the panel-footer
                     $scope.queryCount = queryResults.length;
-                })
-                .error(function(queryResults) {
-                    console.log('Error ' + queryResults);
-                })
-        };
-        $scope.codeAddress = function() {
-            queryBody = {
-                distance: parseFloat($scope.formData.distance),
-                favlang: $scope.formData.favlang,
-                reqVerified: $scope.formData.verified,
-                address: $scope.formData.address
-            };
-            $http.post('/query', queryBody)
-
-            // Store the filtered results in queryResults
-                .success(function(queryResults) {
-
-                    // Query Body and Result Logging
-                    console.log("QueryBody: codeAddress");
-                    console.log(queryBody);
-                    console.log("QueryResults: codeAddress");
-                    console.log(queryResults);
-                    // Pass the filtered results to the Google Map Service and refresh the map
-                    gservice.refresh(queryBody, queryResults);
-
-                    // Count the number of records retrieved for the panel-footer
-                    $scope.queryCount = queryResults.length;
+                    console.log("QueryCount:");
+                    console.log(queryResults.length);
+                    $scope.queryCount2 = queryResults;
+                    console.log("QueryCount2:");
+                    console.log($scope.queryCount2);
                 })
                 .error(function(queryResults) {
                     console.log('Error ' + queryResults);

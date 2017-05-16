@@ -91,8 +91,8 @@ angular.module('gservice', [])
                 var contentString =
                     '<p><b>Username</b>: ' + user.username +
                     '<br><b>Email</b>: ' + user.email +
-                    '<br><b>Type of food</b>: ' + 'description' +
-                    '</p>';
+                    '<br><a href="/map/list">Find me on the menu</a>'+
+                '</p>';
 
                 // Converts each of the JSON records into Google Maps
                 // Location format
@@ -127,7 +127,7 @@ angular.module('gservice', [])
 
             // Uses the selected lat, long as a starting point
             var myLatLong = {lat: latitude, lng: longitude};
-            myLatLong = new google.maps.LatLng(parseFloat(latitude),parseFloat(longitude));
+            myLatLong = new google.maps.LatLng(parseFloat(latitude), parseFloat(longitude));
 
             // If map has not been created already ...
             if (!map) {

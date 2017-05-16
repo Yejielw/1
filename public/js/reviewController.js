@@ -33,7 +33,7 @@ app.controller('reviewController', ["$scope", "reviewFactory", "relevantCook", "
     $scope.downvote = function (user) {
         reviewFactory.downvote(user).then(function () {
             $scope.cook.downvotes++;
-            console.log("i like it")
+            console.log("i dislike it")
         });
 
     };
@@ -48,53 +48,6 @@ app.controller('reviewController', ["$scope", "reviewFactory", "relevantCook", "
                 console.error(err);
             });
     }
-
-
-        // $scope.myInterval = 3000;
-        // $scope.noWrapSlides = false;
-        // $scope.activeSlide = 0;
-
-    // $scope.counter = 0;
-    // $scope.counterPlace = 0;
-    // $scope.nextPhoto = function() {
-    //     // $scope.animateClass =  $scope.animateClass === 'slideInRight' ? 'slideInLeft' : 'slideInRight';
-    //     //setTimeout($scope.animateClassFunc(), 1000);
-    //     $scope.counter += 1;
-    //     console.log($scope.animateClass);
-    //     console.log($scope.counter);
-    // }
-    //
-    // $scope.lastPhoto = function() {
-    //     if ($scope.counter > 0) {
-    //         $scope.counter -= 1;
-    //         //$scope.animateClass =  'slideInLeft';
-    //         setTimeout($scope.animateClassFunc(), 2000);
-    //     }
-    // }
-    //
-    // $scope.nextPlace = function() {
-    //     // $scope.animateClass =  '';
-    //     $scope.counterPlace += 1;
-    //     console.log($scope.animateClass);
-    //     setTimeout($scope.animateClassFunc(), 2000);
-    //     console.log($scope.animateClass);
-    // }
-    //
-    // $scope.lastPlace = function() {
-    //     if ($scope.counterPlace > 0) {
-    //         $scope.counterPlace -= 1;
-    //         // $scope.animateClass =  'slideInLeft';
-    //         setTimeout($scope.animateClassFunc(), 2000);
-    //     }
-    // }
-
-    $scope.animateClassFunc = function() {
-        $scope.animateClass = ' ';
-        console.log('setTimeout class')
-    };
-
-
-
 
 
 }]);

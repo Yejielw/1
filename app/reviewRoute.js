@@ -111,6 +111,42 @@ router.post('/:userid/upvote', function (req, res) {
 });
 
 
+router.post('/:userid/downvote', function (req, res) {
+
+    const userId = req.params.userid;
+
+    // console.log("Looking for user with id ", userId);
+    User.findOne({_id: userId}).exec(function (error, user) {
+
+        if (error) {
+            console.error("Error finding user with id ", userId, ":", error);
+            return next(error);
+        }
+        else if (!user) {
+            return next(new Error('Used with id ' + userId + ' does not exist.'));
+        } else {
+
+            // console.log("Downvote for user with id ", userId);
+            if (!user.downvotes) {
+                user.downvotes = 0;
+            }
+            user.downvotes += 1;
+
+            user.save((err) => {
+                if (err) {
+                    return next(err);
+                } else {
+                    // console.log('Success in downvote!');
+                    res.send(user);
+                }
+            });
+        }
+
+    });
+});
+
+
+
 router.delete('/:deleteReviewId/:cookId', function (req, res, next) {
     var reviewid = req.params.deleteReviewId;
 
@@ -148,40 +184,6 @@ router.delete('/:deleteReviewId/:cookId', function (req, res, next) {
 
 });
 
-
-    router.post('/:userid/downvote', function (req, res) {
-
-        const userId = req.params.userid;
-
-        // console.log("Looking for user with id ", userId);
-        User.findOne({_id: userId}).exec(function (error, user) {
-
-            if (error) {
-                console.error("Error finding user with id ", userId, ":", error);
-                return next(error);
-            }
-            else if (!user) {
-                return next(new Error('Used with id ' + userId + ' does not exist.'));
-            } else {
-
-                // console.log("Downvote for user with id ", userId);
-                if (!user.downvotes) {
-                    user.downvotes = 0;
-                }
-                user.downvotes += 1;
-
-                user.save((err) => {
-                    if (err) {
-                        return next(err);
-                    } else {
-                        // console.log('Success in downvote!');
-                        res.send(user);
-                    }
-                });
-            }
-
-        });
-    });
 
 
     module.exports = router;

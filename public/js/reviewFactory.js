@@ -19,7 +19,7 @@ app.factory('reviewFactory', function ($http) {
         console.log("user to upvote!" + userToUpvote);
         return $http.post('/review/'+ userToUpvote + '/upvote', null)
             .then(function (response) {
-                console.log("aqui desde el upvote en factory!", response.data);
+           //     console.log("aqui desde el upvote en factory!", response.data);
                 return response.data;
 
             }, function (err) {
@@ -28,9 +28,11 @@ app.factory('reviewFactory', function ($http) {
     };
 
     reviewFactory.downvote = function (userToDownvote) {
-        return $http.put('/review/' + userToDownvote + '/downvote', null)
+        console.log("user to downvote" + userToDownvote);
+        return $http.post('/review/' + userToDownvote + '/downvote', null)
             .then(function (response) {
-                console.log(response);
+                console.log("aqui desde el downvote en factory!", response);
+
                 return response.data;
 
             }, function (err) {

@@ -13,7 +13,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
 // Connect to database
-mongoose.connect("mongodb://localhost/trial5");
+mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/trial5");
 
 // Main app
 
